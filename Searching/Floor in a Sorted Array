@@ -1,0 +1,22 @@
+class Solution{
+    static int findFloor(long arr[], int n, long x)
+    {
+        if(x==0) return -1;
+       int l=0;
+       int r=n-1;
+       int res=-1;
+       while(l<=r){
+          int mid=(l+r)/2;
+          if(x>=arr[mid]){
+              res=mid;
+              l=mid+1;
+          }
+          else {                                                             // TC :- log(n)
+           r=mid-1;                                                          // SC :- O(1)
+          }
+           
+       }
+       return res;
+    }
+    
+}
