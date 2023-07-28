@@ -1,0 +1,39 @@
+
+// Time Complexity: Olog(n)
+// Auxiliary Space: O(1)
+
+
+class Solution
+{
+    public static void sort012(int a[], int n)
+    {
+        int lo=0;
+        int mid=0;
+        int hi=n-1;
+        int temp;
+        while (mid<=hi){
+            switch (a[mid]){
+                case 0 : {
+                    temp=a[lo];
+                    a[lo]=a[mid];
+                    a[mid]=temp;
+                    lo++;
+                    mid++;
+                    break;
+                }
+                case 1 : {
+                    mid++;
+                    break;
+                }
+                case 2 : {
+                    temp=a[hi];
+                    a[hi]=a[mid];
+                    a[mid]=temp;
+                    hi--;
+                    break;
+                }
+            }
+            
+        }
+    }
+}
